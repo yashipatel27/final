@@ -15,7 +15,7 @@ with simulation:
     st.markdown("<h3 style='text-align: center; color: black;'>Using data sourced from the _________, we can simulate what Earth will look like in the future.</h3>", unsafe_allow_html=True)
     st.markdown("<h4 style='text-align: center; color: red;'>Let's look into the future. Enter in the number of years you want to see.</h4>", unsafe_allow_html=True)
     
-result = st.button("What are some effects we are seeing now?")
-st.write(result)
-if result:
+effects = st.button("What are some effects we are seeing now?")
+st.write(effects)
+if effects:
     st.write("The effects of climate change are becoming more and more apparent. If we simply look around us we can notice some of its impact—an example including the weather in Philadelphia being this warm in late November. As well as extreme flooding that recently occurred in Pakistan.")
