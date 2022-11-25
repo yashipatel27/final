@@ -19,3 +19,7 @@ effects = st.button("What are some effects we are seeing now?")
 st.write(effects)
 if effects:
     st.write("The effects of climate change are becoming more and more apparent. If we simply look around us we can notice some of its impact—an example including the weather in Philadelphia being this warm in late November. As well as extreme flooding that recently occurred in Pakistan.")
+donate = st.button("Places to Donate")
+st.write(effects)
+if effects:
+    st.write(
