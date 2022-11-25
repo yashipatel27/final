@@ -1,0 +1,16 @@
+import streamlit as st
+
+header = st.beta_container()
+simulation = st.beta_container()
+volunteer = st.beta_container()
+data = st.beta_container()
+
+with header:
+    st.markdown("<h2 style='text-align: center; color: gray;'>Welcome to:</h2>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: black;'>Climate Care</h1>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: black;'>Join us in combatting climate change! At ClimateCare, we provide you with the resources to volunteer, learn, and advocate for climate change in your community. Explore our webpage below!</h3>", unsafe_allow_html=True)
+
+with simulation:
+    st.markdown("<h2 style='text-align: center; color: gray;'>What does the future look like?</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: black;'>Using data sourced from the _________, we can simulate what Earth will look like in the future.</h3>", unsafe_allow_html=True)
+    st.markdown("<h4 style='text-align: center; color: red;'>Let's look into the future. Enter in the number of years you want to see.</h4>", unsafe_allow_html=True)
