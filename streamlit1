@@ -20,7 +20,8 @@ st.write(effects)
 if effects:
     st.write("The effects of climate change are becoming more and more apparent. If we simply look around us we can notice some of its impact—an example including the weather in Philadelphia being this warm in late November. As well as extreme flooding that recently occurred in Pakistan.")
 
-#I am trying a nested button method here not sure if this in going to work
-donate = st.button("Places to Donate")
-st.write(donate)
-if 'donate
+happen = st.button("What will happen if we don't do something?")
+st.write(happen)
+if happen:
+    st.write("If we continue to ignore the issues that are arising from climate change, the planet as well as its wildlife will face major issues, such as drought due to the temperature rising. As well as certain animals going extinct due to the rising temperatures as well.")
+
