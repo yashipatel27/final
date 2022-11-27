@@ -5,6 +5,7 @@ simulation = st.beta_container()
 volunteer = st.beta_container()
 data = st.beta_container()
 facts = st.beta_container()
+donate = st.beta_container()
 
 with header:
     st.markdown("<h2 style='text-align: center; color: gray;'>Welcome to:</h2>", unsafe_allow_html=True)
@@ -29,3 +30,11 @@ st.write(happen)
 if happen:
     st.write("If we continue to ignore the issues that are arising from climate change, the planet as well as its wildlife will face major issues, such as drought due to the temperature rising. As well as certain animals going extinct due to the rising temperatures as well.")
 
+with donate:
+    st.markdown("<h2 style='text-align: center; color: gray;'>Donate to Organizations!</h2>", unsafe_allow_html=True)
+d1 = st.button("Clean Air Task Force")
+st.write(d1)
+if d1:
+    st.write(
+
+    
