@@ -1,0 +1,30 @@
+import streamlit as st
+from strealit_option_menu import option_menu
+
+st.set_page_config(page_title="ClimateCare", page_icon="###", layout="wide")
+
+#Header
+with st.container():
+    st.subheader("Hi, :wave:")
+    st.title("Welcome to ClimateCare :herb:")
+    st.write("At ClimateCare, we provide you with the resources to volunteer, learn, and advocate for climate change in your community. Together, we can combat climate change!")
+st.markdown("---")
+st.subheader("Let's get started. What do you want to explore? :dizzy:")
+
+col1,col2,col3 = st.columns(3)
+with col1:
+    if st.button("Climate Change Facts"):
+        switch_page("facts.py")
+    
+with col2:
+    if st.button("Volunteer opportunities"):
+        switch_page("volunteer.py")
+
+with col3:
+    if st.button("Donations"):
+        switch_page("donations.py")
+
+st.markdown("---")
+with st.container():
+    st.subheader("What does the future look like? :thought_balloon:")
+    st.write("Using data sourced from ___, we can look at how out world will change in 10, 20, 50, and 100 years if we do not take action. Interact with the slider bars below to look at global temperature changes!")
