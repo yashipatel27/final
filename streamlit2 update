@@ -7,6 +7,7 @@ with st.sidebar:
         menu_title = "Explore",
         options = ["Climate Change Facts", "Volunteer opportunities", "Donate"],
     )
+if selected == "Climate Change Facts":
     
 
 #Header
