@@ -29,7 +29,9 @@ if selected == "Volunteer Opportunities":
     if v2:
         st.write("This organization plants different fruits and other edible plants so that they can be more assessable to schools and neighborhoods in Philly.")
         
-    
+if selected == "Donate":
+    d1 = st.button("Clean Air Task Force")
+    st.write(d1)
 #Header
 with st.container():
     st.subheader("Hi, :wave:")
