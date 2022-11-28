@@ -5,11 +5,31 @@ st.set_page_config(page_title="ClimateCare", page_icon="###", layout="wide")
 with st.sidebar:
     selected = option_menu(
         menu_title = "Explore",
-        options = ["Climate Change Facts", "Volunteer opportunities", "Donate"],
+        options = ["Climate Change Facts", "Volunteer Opportunities", "Donate"],
     )
 if selected == "Climate Change Facts":
+    effects = st.button("What are some effects we are seeing now?")
+    st.write(effects)
+    if effects:
+        st.write('The effects of climate change are becoming more and more apparent. If we simply look around us we can notice some of its impact—an example including the weather in Philadelphia being this warm in late November. As well as extreme flooding that recently occurred in Pakistan.')
     
-
+    happen = st.button("What are some effects we are seeing now?")
+    st.write(happen)
+    if happen:
+        st.write('If we continue to ignore the issues that are arising from climate change, the planet as well as its wildlife will face major issues, such as drought due to the temperature rising. As well as certain animals going extinct.')
+        
+if selected == "Volunteer Opportunities":
+    v1 = st.button("Penn Environment")
+    st.write(v1)
+    if v1:
+        st.write("They seek to not only better the environment through the help of their volunteers, but this organization in Philly is also fighting to make better policies to help the planet.")
+    
+    v2 = st.button("Philadelphia Orchard Project")
+    st.write(v2)
+    if v2:
+        st.write("This organization plants different fruits and other edible plants so that they can be more assessable to schools and neighborhoods in Philly.")
+        
+    
 #Header
 with st.container():
     st.subheader("Hi, :wave:")
@@ -17,7 +37,7 @@ with st.container():
     st.write("At ClimateCare, we provide you with the resources to volunteer, learn, and advocate for climate change in your community. Together, we can combat climate change!")
 st.markdown("---")
 st.subheader("Let's get started. What do you want to explore? :dizzy:")
-
+'''
 col1,col2,col3 = st.columns(3)
 with col1:
     if st.button("Climate Change Facts"):
@@ -30,7 +50,7 @@ with col2:
 with col3:
     if st.button("Donations"):
         switch_page("donations.py")
-
+'''
 st.markdown("---")
 with st.container():
     st.subheader("What does the future look like? :thought_balloon:")
