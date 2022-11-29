@@ -5,8 +5,16 @@ st.set_page_config(page_title="ClimateCare", page_icon="###", layout="wide")
 with st.sidebar:
     selected = option_menu(
         menu_title = "Explore",
-        options = ["Climate Change Facts", "Volunteer Opportunities", "Donate"],
+        options = ["Home","Climate Change Facts", "Volunteer Opportunities", "Donate"],
     )
+if selected == "Home":
+    with st.container():
+    st.subheader("Hi, :wave:")
+    st.title("Welcome to ClimateCare :herb:")
+    st.write("At ClimateCare, we provide you with the resources to volunteer, learn, and advocate for climate change in your community. Together, we can combat climate change!")
+st.markdown("---")
+st.subheader("Let's get started. What do you want to explore? :dizzy:")
+
 if selected == "Climate Change Facts":
     effects = st.button("What are some effects we are seeing now?")
     st.write(effects)
