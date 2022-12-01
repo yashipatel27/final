@@ -52,7 +52,7 @@ def loadLottie(url):
 lottieEarth = loadLottie("https://lottie.host/0ac3beb6-9fd4-44dc-af0f-1e28c7f4cec7/zNiGojOhNH.json")
 
 #st.set_page_config(page_title="ClimateCare", page_icon="###", layout="wide")
-
+#I DONT THINK WE NEED THE CODE DOWN BECAUSE IT ADDS THE SIDEBAR TWICE
 #Header
 col1,col2 = st.columns(2)
 with col1:
