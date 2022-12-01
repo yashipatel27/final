@@ -1,0 +1,90 @@
+import requests
+import streamlit as st
+from streamlit_option_menu import option_menu
+from streamlit_lottie import st_lottie
+
+with st.sidebar:
+    selected = option_menu(
+        menu_title = "Explore",
+        options = ["Home","Climate Change Facts", "Volunteer Opportunities", "Donate"],
+)
+
+if selected == "Home":
+    with st.container():
+        st.subheader("Hi, :wave:")
+        st.title("Welcome to ClimateCare :herb:")
+        st.write("At ClimateCare, we provide you with the resources to volunteer, learn, and advocate for climate change in your community. Together, we can combat climate change!")
+        st.markdown("---")
+        st.subheader("Let's get started. What do you want to explore? Head to the navigation bar on the right and select your option. :dizzy:")
+
+if selected == "Climate Change Facts":
+    effects = st.button("What are some effects we are seeing now?")
+    st.write(effects)
+    if effects:
+        st.write('The effects of climate change are becoming more and more apparent. If we simply look around us we can notice some of its impact—an example including the weather in Philadelphia being this warm in late November. As well as extreme flooding that recently occurred in Pakistan.')
+    
+    happen = st.button("What are some effects we are seeing now?")
+    st.write(happen)
+    if happen:
+        st.write('If we continue to ignore the issues that are arising from climate change, the planet as well as its wildlife will face major issues, such as drought due to the temperature rising. As well as certain animals going extinct.')
+        
+if selected == "Volunteer Opportunities":
+    v1 = st.button("Penn Environment")
+    st.write(v1)
+    if v1:
+        st.write("They seek to not only better the environment through the help of their volunteers, but this organization in Philly is also fighting to make better policies to help the planet.")
+    
+    v2 = st.button("Philadelphia Orchard Project")
+    st.write(v2)
+    if v2:
+        st.write("This organization plants different fruits and other edible plants so that they can be more assessable to schools and neighborhoods in Philly.")
+        
+if selected == "Donate":
+    d1 = st.button("Clean Air Task Force")
+    st.write(d1)
+#-----
+def loadLottie(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+lottieEarth = loadLottie("https://lottie.host/0ac3beb6-9fd4-44dc-af0f-1e28c7f4cec7/zNiGojOhNH.json")
+
+#st.set_page_config(page_title="ClimateCare", page_icon="###", layout="wide")
+
+#Header
+col1,col2 = st.columns(2)
+with col1:
+    with st.container():
+        st.subheader("Hi, :wave:")
+        st.title("Welcome to ClimateCare :herb:")
+        st.write("At ClimateCare, we provide you with the resources to volunteer, learn, and advocate for climate change in your community. Together, we can combat climate change!")
+with col2:
+    st.subheader("")
+    st.write("")
+    st.header("")
+    st_lottie(lottieEarth, height = 200, key = "Earth")
+
+
+st.markdown("---")
+
+st.subheader("Let's get started. What do you want to explore? :dizzy:")
+
+col1,col2,col3 = st.columns(3)
+with col1:
+    if st.button("Climate Change Facts"):
+        switch_page("facts.py")
+    
+with col2:
+    if st.button("Volunteering"):
+        switch_page("volunteer.py")
+
+with col3:
+    if st.button("Donation Links"):
+        switch_page("donations.py")
+
+st.markdown("---")
+with st.container():
+    st.subheader("What does the future look like? :thought_balloon:")
+    st.write("Using data sourced from ___, we can look at how out world will change in 10, 20, 50, and 100 years if we do not take action. Interact with the slider bars below to look at global temperature changes!")
