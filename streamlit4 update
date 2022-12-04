@@ -88,6 +88,10 @@ if selected == "Volunteer Opportunities":
         st.write("This organization plants different fruits and other edible plants so that they can be more assessable to schools and neighborhoods in Philly.")
         
 if selected == "Donate":
+    st.title("To help the cause, Donate!")
+    st.write("
     d1 = st.button("Clean Air Task Force")
     st.write(d1)
+    if d1:
+        
 #-----
