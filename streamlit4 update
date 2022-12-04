@@ -89,7 +89,8 @@ if selected == "Volunteer Opportunities":
         
 if selected == "Donate":
     st.title("To help the cause, Donate!")
-    st.write("
+    st.write("If time is a conflict but you still want to help, donating is a great option. It will allow you to become more educted and bring light to the issue by funding it.")
+    
     d1 = st.button("Clean Air Task Force")
     st.write(d1)
     if d1:
