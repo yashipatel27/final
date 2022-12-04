@@ -1,0 +1,93 @@
+#including the new facts in the factsheet!
+
+import requests
+import streamlit as st
+from streamlit_option_menu import option_menu
+from streamlit_lottie import st_lottie
+
+def loadLottie(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+lottieEarth = loadLottie("https://lottie.host/bd8b3239-3835-40f2-bec2-8fe9a5d6b275/lIJEEXEpZR.json")
+
+st.set_page_config(page_title="ClimateCare", page_icon="###", layout="wide")
+
+with st.sidebar:
+    selected = option_menu(
+        menu_title = "Explore",
+        options = ["Home","Climate Change Facts", "Volunteer Opportunities", "Donate"],
+)
+
+if selected == "Home":
+    with st.container():
+        st.subheader("Hi, :wave:")
+        col1,col2 = st.columns(2)
+        with col1:
+            with st.container():
+                st.title("Welcome to ClimateCare :herb:")
+                st.write("At ClimateCare, we provide you with the resources to volunteer, learn, and advocate for climate change in your community. Together, we can combat climate change!")
+        with col2:
+            st_lottie(lottieEarth, height = 300, key = "Earth")
+        
+#ok
+if selected == "Climate Change Facts":
+    st.title("There's lots to learn about climate change :leaves:")
+    st.write("When people think about climate change, they wonder about how they can make a change in the world if they are just one person. The truth is, it's not just one person. It's thousands of scientists, advocates, doctors, and enginners working together to solve a global issue. We're moving in the right direction, but we need your help to move faster.")
+    st.subheader("We just need one more person, just like you!")
+    st.markdown("---")
+    st.title("Q&A: The Climate Change Factsheet :earth_americas:")
+
+    intro = st.button("What is climate change?")
+    if intro:
+        st.write('According to the United Nations, climate change is the long-term shift in global temperatures and weather patterns.')
+    
+    causes = st.button("What causes climate change?")
+    if causes:
+        st.write("Up until the 1700s, temperatures and weather patterns have been relatively stable. However, with the onset of human industrialization and the massive exploitation of the planet, scientific sources like the American Chemical Society (ACS), American Medical Association (AMA), and the United Nations (UN), has proven that humans are the number one cause of climate change.")
+        url = "https://www.acs.org/content/acs/en/policy/publicpolicies/sustainability/globalclimatechange.html"
+        st.write("To read the ACS Climate Change Report (2019-2020), click the following link. (%s)" % url)
+    
+    how = st.button("How do humans cause climate change?")
+    if how:
+        st.write("Well, it's really about affecting natural cycles. Human exploitation and development means that we modify natural cycles to fit our needs. For example, burning fossil fuels for energy has increased the amount of carbon in the atmosphere. This directly impacting the carbon cycle, which uses cellular respiration and biological degradation to recycle carbon in an ecosystem.")
+        st.write("Excess carbon dioxide in the atmosphere means that heat is trapped in the atmosphere, leading to global increases in temperature.")
+        st.write("Click on the image to learn more about how greenhouse gas emissions affect temperature.")
+        st.markdown("[![Foo](https://www.climate.gov/sites/default/files/styles/full_width_620_original_image/public/2021-07/projected_emissions_temperature_CSSP_lrg_1.png?itok=2Mbmdip7)](https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature)")
+
+    goingon = st.button("What about melting glaciers? What does that have to do with anything?")
+    if goingon:
+        st.write("Glaciers hold ~10% of Earth's water. When the glaciers melt due to increases in temperature, sea levels and currents are affected. When sea levels rise, there's an increase in coastal erosion. Man-made structures near the coast are more prone to flooding and damage by natural disasters, such as hurricanes or tsunamis.")
+        st.write("The oceans are very important factors of weather. When glaciers melt, ocean currents are directly imacted. Water circulation affects precipitation patterns and wind patterns. Normally, in the Atlantic ocean, warm air from the equator is pushed upwards to North America and Western Europe while cold air from the north is pushed downwards towards South America and Africa. This phenomenon is called Atmospheric circulation. Now that currents and tides have changed, we see less warm air moving up north and less cold air moving down south. This causes longer seasons and more extreme weather patterns, like storms.")
+        st.write("Click the image to learn more about air circulation and ocean currents.")
+        st.markdown("[![Foo](https://scied.ucar.edu/sites/default/files/media/images/atm_circulation_0.jpg)](https://scied.ucar.edu/learning-zone/how-weather-works/global-air-atmospheric-circulation)")
+
+    effects = st.button("What are some effects we are seeing now?")
+    if effects:
+        st.write('The effects of climate change are becoming more and more apparent. If we simply look around us we can notice some of its impact—an example including the weather in Philadelphia being this warm in late November. As well as extreme flooding that recently occurred in Pakistan.')
+
+    increases = st.button("How much has our global temperature increaed by?")
+    if increases:
+        st.write("According to Climate.gov, the global temperature has increased by 1 ºC since the 1880s. However, the rate of warming is now twice of that, with temperatures increasing at a record high since 1881.")
+        st.write("Click on the image to read the June 2022 report from Climate.gov.")
+        st.markdown("[![Foo](https://scied.ucar.edu/sites/default/files/media/images/atm_circulation_0.jpg)](https://www.climate.gov/sites/default/files/styles/full_width_620_original_image/public/2022-06/ClimateDashboard-global-surface-temperature-graph-20220624-1400px.jpg?itok=L92HCm6n)")
+
+#nicenice!!   
+
+if selected == "Volunteer Opportunities":
+    v1 = st.button("Penn Environment")
+    st.write(v1)
+    if v1:
+        st.write("They seek to not only better the environment through the help of their volunteers, but this organization in Philly is also fighting to make better policies to help the planet.")
+    
+    v2 = st.button("Philadelphia Orchard Project")
+    st.write(v2)
+    if v2:
+        st.write("This organization plants different fruits and other edible plants so that they can be more assessable to schools and neighborhoods in Philly.")
+        
+if selected == "Donate":
+    d1 = st.button("Clean Air Task Force")
+    st.write(d1)
+#-----
