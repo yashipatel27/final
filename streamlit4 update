@@ -94,5 +94,6 @@ if selected == "Donate":
     d1 = st.button("Clean Air Task Force")
     st.write(d1)
     if d1:
+        st.write("Clean Air task Force aims to obtain
         
 #-----
