@@ -104,4 +104,11 @@ if selected == "Donate":
         st.write("Accroding to their website, they aim make better policies so that there will be more zero-emission systems. They undertand that this can be costly so part of their mission is to acheive their goals sustianablly."
         url = 'https://secure.ucsusa.org/JuXeEefnxEqkc7b6uwrzeg2?MS=topnav&_gl=1*3lznz3*_ga*NzM1MTE1MDEuMTY2OTM5MjYzNg..*_ga_VB9DKE4V36*MTY2OTM5MjYzNS4xLjAuMTY2OTM5MjYzNS4wLjAuMA'
         st.write("To donate to The Union of Concerned Scientists, click the following link. (%s)" % url)
+    
+    d3 = st.button("Earth Justice")
+    st.write(d3)
+    if d3:
+        st.write("Accroding to their website, they aim make better policies so that there will be more zero-emission systems. They undertand that this can be costly so part of their mission is to acheive their goals sustianablly."
+        url = 'https://act.earthjustice.org/a/givedonate-today-2?ms=web_menu_header'
+        st.write("To donate to Earth Justice, click the following link. (%s)" % url)
 #-----
